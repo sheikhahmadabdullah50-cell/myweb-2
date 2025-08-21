@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: url(joshua-reddekopp-SyYmXSDnJ54-unsplash.jpg) no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      cursor: none;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.3);
+      height: 399px;
+      width: 699px;
+      position: absolute;
+      text-align: center;
+      border-radius: 5px;
+      bottom: 30%;
+      right: 25%;
+      backdrop-filter: blur(4px) saturate(50%);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 1; /* keep it below cursor */
+    }
+
+    h1 {
+      background: linear-gradient(45deg, #fff 0%, #c6f4ff 40%, #ceceff 70%, #add8ef 100%);
+      background-size: 200% 200%;
+      animation: animate 3s linear infinite;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes animate {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    input {
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      height: 30px;
+      width: 400px;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      backdrop-filter: blur(4px) saturate(50%);
+      font-size: 18px;
+      padding: 10px 15px;
+      color: #add;
+      cursor: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    input::placeholder {
+      color: #add;
+    }
+
+    button {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      height: 60px;
+      width: 200px;
+      padding: 10px 12px;
+      font-family: 'Poppins', sans-serif;
+      transition: transform 0.3s;
+      cursor: none;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      background: #555;
+      z-index: 9999; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign in</h1>
+    <form>
+      <input type="email" placeholder="Email"><br>
+      <input type="password" placeholder="Password"><br>
+      <button type="submit">Sign in</button>
+    </form>
+  </div>
+
+  <div class="cursor"></div>
+
+  <script src="signin.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML basics | Pro code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url(codioful-formerly-gradienta-bKESVqfxass-unsplash.jpg) no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+      text-shadow: 0.25rem 0.25rem 0.125rem rgba(0,0,0,0.7);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    abbr {
+      text-decoration: none;
+    }
+
+    /* Scroll animations */
+    .observe-appear {
+      opacity: 0;
+      transform: translateY(6rem);
+      transition: all 0.6s ease-out;
+    }
+    .observe-appear.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .observe {
+      transform: translateX(-6rem);
+      transition: all 0.6s ease-out;
+      opacity: 0;
+    }
+    .observe.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .observe-2 {
+      transform: translateX(6rem);
+      opacity: 0;
+      transition: all 0.6s ease-out;
+    }
+    .observe-2.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    ::-webkit-scrollbar{
+      cursor: none;
+      width: 0.5rem;
+      background-color: #333;
+    }
+    ::-webkit-scrollbar-thumb{
+      background-color: #555;
+      border-radius: 5px;
+    }
+    /* Code block */
+    .html {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 0.5rem;
+      border-top: 0.1rem solid rgba(255, 255, 255, 0.4);
+      border-left: 0.1rem solid rgba(255, 255, 255, 0.4);
+      padding: 2rem;
+      width: 90%;
+      max-width: 70rem;
+      min-height: 20rem;
+      margin: 2rem auto;
+      font-size: 1.25rem;
+      font-weight: bold;
+      box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.5);
+      backdrop-filter: blur(0.5rem) saturate(50%);
+      overflow-x: auto;
+    }
+
+    pre code {
+      font-size: 1.25rem;
+      color: #222;
+    }
+
+    /* Reusable code highlight box */
+    .code-box {
+      display: inline-block;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.15);
+      border-top: 0.1rem solid rgba(255,255,255,0.4);
+      border-left: 0.1rem solid rgba(255,255,255,0.4);
+      box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,0.5);
+      backdrop-filter: blur(0.5rem) saturate(50%);
+    }
+
+    /* Exercise box */
+    .exercise {
+      background: rgba(255,255,255,0.15);
+      border-radius: 0.5rem;
+      border-top: 0.1rem solid rgba(255,255,255,0.4);
+      border-left: 0.1rem solid rgba(255,255,255,0.4);
+      box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.5);
+      padding: 2rem;
+      width: 90%;
+      max-width: 50rem;
+      margin: 3rem auto;
+      backdrop-filter: blur(0.5rem) saturate(50%);
+    }
+
+    li {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .cursor{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      background: #555;
+      border-radius: 50%;
+    }
+    @media (max-width: 40rem) {
+      body {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      p, li, pre code {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="observe-appear">Lesson one: Basics of HTML</h1>
+  <p class="observe-appear"><abbr title="Hypertext Markup Language">HTML</abbr> stands for <b>Hypertext Markup Language.</b> It is used for <b>web development.</b> It is considered as one of the best coding languages for beginners before <b>Python</b> even after being so old. Because HTML is very easy to learn. You can learn the basics in just 10 minutes cuz of how simple it is. Without further ado, let's get started!</p>
+
+  <h1 class="observe-appear">a) Every HTML code starts like this:</h1>
+  <div class="html">
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Awesome Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </div>
+
+  <ul>
+    <li class="observe"><span class="code-box">&lt;!DOCTYPE html&gt;</span> → Tells the browser that it’s HTML5</li>
+    <li class="observe"><span class="code-box">&lt;html&gt;</span> → wraps the whole page</li>
+    <li class="observe"><span class="code-box">&lt;head&gt;</span> → stuff for the website like title, fonts etc.</li>
+    <li class="observe"><span class="code-box">&lt;body&gt;</span> → all the visible content of the website goes here</li>
+  </ul>
+
+  <h1 class="observe-appear">b) Common tags of HTML</h1>
+  <p class="observe-2"><span class="code-box">&lt;h1&gt;</span> → <span class="code-box">&lt;h6&gt;</span> → Headings (bigger to smaller)</p>
+  <p class="observe-2"><span class="code-box">&lt;a&gt;</span> → links and many more.</p>
+  <p class="observe-2"><span class="code-box">&lt;button&gt;</span> → creates a button (i.e. - <span class="code-box">&lt;button&gt;Click me&lt;/button&gt;</span>)</p>
+
+  <div class="exercise">
+    <h1 class="observe-appear">Exercise</h1>
+    <ul>
+      <li class="observe-2">Create a button that says "Hover me!"</li>
+      <li>Create a heading that will say, "My website."</li>
+    </ul>
+  </div>
+
+  <!---CUstom cursor-->
+
+  <div class="cursor"></div>
+  <script src="bsic.js"></script>
+</body>
+</html>
